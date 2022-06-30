@@ -3,7 +3,7 @@
    <application
         android:label="fitty_feed_app"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/splash_logo">
         <activity
             android:name=".MainActivity"
             android:exported="true"
