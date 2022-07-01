@@ -179,11 +179,50 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    ); // This trailing comma makes auto-formatting nicer for build methods.
+  }
+
+  Widget _buildFoodItem(String imgPath, String foodName, String price) {
+    return Padding(
+        padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+        child: InkWell(
+            onTap: () {
+              //             Navigator.of(context).push(MaterialPageRoute(
+              //                 builder: (context) => DetailsPage(
+              //                     heroTag: imgPath, foodName: foodName, foodPrice: price)));
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(children: [
+                  Hero(
+                      tag: imgPath,
+                      child: Image(
+                          image: AssetImage(imgPath),
+                          fit: BoxFit.cover,
+                          height: 75.0,
+                          width: 75.0)),
+                  const SizedBox(width: 10.0),
+                  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(foodName,
+                            style: const TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.bold)),
+                        Text(price,
+                            style: const TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 15.0,
+                                color: Colors.grey))
+                      ])
+                ]),
+                IconButton(
+                    icon: const Icon(Icons.add),
+                    color: Colors.black,
+                    onPressed: () {})
+              ],
+            )));
   }
 }
