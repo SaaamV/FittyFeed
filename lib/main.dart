@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fitty_feed_app/detailsPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -188,9 +189,9 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
         child: InkWell(
             onTap: () {
-              //             Navigator.of(context).push(MaterialPageRoute(
-              //                 builder: (context) => DetailsPage(
-              //                     heroTag: imgPath, foodName: foodName, foodPrice: price)));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DetailsPage(
+                      heroTag: imgPath, foodName: foodName, foodPrice: price)));
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
