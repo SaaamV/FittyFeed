@@ -106,12 +106,78 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.white,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0)),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            child: ListView(
+              primary: false,
+              padding: const EdgeInsets.only(left: 25.0, right: 20.0),
+              children: <Widget>[
+                Padding(
+                    padding: const EdgeInsets.only(top: 45.0),
+                    child: SizedBox(
+                        height: MediaQuery.of(context).size.height - 300.0,
+                        child: ListView(children: [
+                          _buildFoodItem(
+                              'assets/plate1.png', 'Salmon bowl', '\$24.00'),
+                          _buildFoodItem(
+                              'assets/plate2.png', 'Spring bowl', '\$22.00'),
+                          _buildFoodItem(
+                              'assets/plate6.png', 'Avocado bowl', '\$26.00'),
+                          _buildFoodItem(
+                              'assets/plate5.png', 'Berry bowl', '\$24.00')
+                        ]))),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Container(
+                      height: 65.0,
+                      width: 60.0,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: const Center(
+                        child: Icon(Icons.search, color: Colors.black),
+                      ),
+                    ),
+                    Container(
+                      height: 65.0,
+                      width: 60.0,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: const Center(
+                        child: Icon(Icons.shopping_basket, color: Colors.black),
+                      ),
+                    ),
+                    Container(
+                      height: 65.0,
+                      width: 120.0,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.grey,
+                              style: BorderStyle.solid,
+                              width: 1.0),
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: const Color(0xFF1C1428)),
+                      child: const Center(
+                          child: Text('Checkout',
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontSize: 15.0))),
+                    )
+                  ],
+                )
+              ],
             ),
-          ],
-        ),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
