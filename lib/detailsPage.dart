@@ -152,13 +152,13 @@ class _DetailsPageState extends State<DetailsPage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          // _buildInfoCard('WEIGHT', '300', 'G'),
-                          // const SizedBox(width: 10.0),
-                          //   _buildInfoCard('CALORIES', '267', 'CAL'),
-                          //   const SizedBox(width: 10.0),
-                          //   _buildInfoCard('VITAMINS', 'A, B6', 'VIT'),
-                          //   const SizedBox(width: 10.0),
-                          //   _buildInfoCard('AVAIL', 'NO', 'AV')
+                          _buildInfoCard('WEIGHT', '300', 'G'),
+                          const SizedBox(width: 10.0),
+                          _buildInfoCard('CALORIES', '267', 'CAL'),
+                          const SizedBox(width: 10.0),
+                          _buildInfoCard('VITAMINS', 'A, B6', 'VIT'),
+                          const SizedBox(width: 10.0),
+                          _buildInfoCard('AVAIL', 'NO', 'AV')
                         ],
                       )),
                   const SizedBox(height: 20.0),
@@ -185,5 +185,68 @@ class _DetailsPageState extends State<DetailsPage> {
             )
           ])
         ]));
+  }
+
+  Widget _buildInfoCard(String cardTitle, String info, String unit) {
+    return InkWell(
+        onTap: () {
+          // selectCard(cardTitle);
+        },
+        child: AnimatedContainer(
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeIn,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color:
+                  cardTitle == selectedCard ? Color(0xFF7A9BEE) : Colors.white,
+              border: Border.all(
+                  color: cardTitle == selectedCard
+                      ? Colors.transparent
+                      : Colors.grey.withOpacity(0.3),
+                  style: BorderStyle.solid,
+                  width: 0.75),
+            ),
+            height: 100.0,
+            width: 100.0,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, left: 15.0),
+                    child: Text(cardTitle,
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 12.0,
+                          color: cardTitle == selectedCard
+                              ? Colors.white
+                              : Colors.grey.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0, bottom: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(info,
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 14.0,
+                                color: cardTitle == selectedCard
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontWeight: FontWeight.bold)),
+                        Text(unit,
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 12.0,
+                              color: cardTitle == selectedCard
+                                  ? Colors.white
+                                  : Colors.black,
+                            ))
+                      ],
+                    ),
+                  )
+                ])));
   }
 }
