@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(
         title: '',
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -84,14 +85,14 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.only(left: 40.0),
             child: Row(
               children: const <Widget>[
-                Text('Healthy',
+                Text('Fitty',
                     style: TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 25.0)),
                 SizedBox(width: 10.0),
-                Text('Food',
+                Text('Feed',
                     style: TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
