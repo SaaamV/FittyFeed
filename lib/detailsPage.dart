@@ -71,6 +71,118 @@ class _DetailsPageState extends State<DetailsPage> {
                                 fit: BoxFit.cover)),
                         height: 200.0,
                         width: 200.0))),
+            Positioned(
+              top: 250.0,
+              left: 25.0,
+              right: 25.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(widget.foodName,
+                      style: const TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 22.0,
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(widget.foodPrice,
+                          style: const TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 20.0,
+                              color: Colors.grey)),
+                      Container(height: 25.0, color: Colors.grey, width: 1.0),
+                      Container(
+                        width: 125.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(17.0),
+                            color: const Color(0xFF7A9BEE)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            InkWell(
+                              onTap: () {},
+                              child: Container(
+                                height: 25.0,
+                                width: 25.0,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(7.0),
+                                    color: const Color(0xFF7A9BEE)),
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.remove,
+                                    color: Colors.white,
+                                    size: 20.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const Text('2',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 15.0)),
+                            InkWell(
+                              onTap: () {},
+                              child: Container(
+                                height: 25.0,
+                                width: 25.0,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(7.0),
+                                    color: Colors.white),
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Color(0xFF7A9BEE),
+                                    size: 20.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20.0),
+                  SizedBox(
+                      height: 150.0,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          // _buildInfoCard('WEIGHT', '300', 'G'),
+                          // const SizedBox(width: 10.0),
+                          //   _buildInfoCard('CALORIES', '267', 'CAL'),
+                          //   const SizedBox(width: 10.0),
+                          //   _buildInfoCard('VITAMINS', 'A, B6', 'VIT'),
+                          //   const SizedBox(width: 10.0),
+                          //   _buildInfoCard('AVAIL', 'NO', 'AV')
+                        ],
+                      )),
+                  const SizedBox(height: 20.0),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 5.0),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(10.0),
+                              bottomLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0)),
+                          color: Colors.black),
+                      height: 50.0,
+                      child: const Center(
+                        child: Text('\$52.00',
+                            style: TextStyle(
+                                color: Colors.white, fontFamily: 'Montserrat')),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ])
         ]));
   }
